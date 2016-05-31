@@ -4,7 +4,9 @@
     angular.module('todoCtrl', ['ui.bootstrap'])
     
     .controller('todoCtrl', function($scope){
-        $scope.data = {
+        $scope.alerts = [];
+		
+		$scope.data = {
             orderBy: 'entry',
             todoItems: []
         };
@@ -19,9 +21,20 @@
             });
         };
         
-        $scope.updateItem = function(item){
-            
+        $scope.updateItem = function(item, newDetails, newDeadline, newAlarm){
+			item.details = newDetails;
+			item.deadline = newDeadline;
+			item.alarm = newAlarm;
+			$scope.addAlert('success', 'Update successful.');
         };
+		
+		$scope.addAlert = function(alertType, alertMsg){
+			$scope.alerts.push({type: alertType, msg: alertMsg});
+		};
+		
+		$scope.closeAlert = function(index){
+			$scope.alerts.splice(index, 1);
+		};
     });
     
 })();

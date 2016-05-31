@@ -30,27 +30,26 @@
                 </select>
             </div>
         </div>
-        <div ng-repeat="item in data.todoItems">
+        <div ng-repeat="x in data.todoItems">
             <div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
-						<a href="#" ng-click="item.isCollapsed = !item.isCollapsed">{{ item.name }}</a>
+						<a href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }}</a>
 					</h4>
 				</div>
-				<div class="panel-body" uib-collapse="item.isCollapsed">
-					<label class="control-label">Details</label>
-					<input type="text" ng-model="item.details">
-					<label class="control-label">Deadline</label>
-					<input type="date" ng-model="item.deadline">
-					<label>
-						<input type="checkbox" class="btn btn-primary" ng-model="item.alarm" btn-checkbox>
-						Alarm
-					</label>
-					<input type="submit" ng-submit="updateItem(item)" value="Update">
-					<div class="test">
-						{{ item.details }}
-						{{ item.deadline }}
-					</div>
+				<div class="panel-body" uib-collapse="x.isCollapsed">
+					<form ng-submit="updateItem(x, newDetails, newDeadline, newAlarm)">
+						<label class="control-label">Details</label>
+						<input type="text" ng-model="newDetails">
+						<label class="control-label">Deadline</label>
+						<input type="date" ng-model="newDeadline">
+						<label>
+							<input type="checkbox" class="btn btn-primary" ng-model="newAlarm" btn-checkbox>
+							Alarm
+						</label>
+						<input type="submit" value="Update">
+					</form>
+					<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
 				</div>
 			</div>
         </div>
