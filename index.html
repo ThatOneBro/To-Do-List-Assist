@@ -3,16 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>List Assist</title>
-	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script src="js/base/ui-bootstrap-tpls-1.3.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="js/base/ui-bootstrap-tpls-1.3.3.min.js"></script>
+	<script src="js/listassist.js"></script>
+    <script src="js/controllers/todoctrl.js"></script>
 </head>
 
 <body>
     <div class="container app-wrap ng-scope" ng-controller="todoCtrl">
         <div class="row">
-            <div class="col-sm=-12">
+            <div class="col-sm-12">
                 <h1 class="text-center">List Assist</h1>
             </div>
         </div>
@@ -28,25 +30,29 @@
                 </select>
             </div>
         </div>
-        <div ng-repeat="item in data.todoItems" class="col-sm-12">
-            <div class="row">
-                <a href="#" ng-click="item.isCollapsed = !item.isCollapsed">{{ item.name }}</a>
-            </div>
-            <div collapse="item.isCollapsed" ng-show="!item.isCollapsed">
-                <label class="control-label">Details</label>
-                <input type="text" ng-model="item.details">
-                <label class="control-label">Deadline</label>
-                <input type="date" ng-model="item.deadline">
-                <label>
-                    <input type="checkbox" class="btn btn primary" ng-model="item.alarm" btn-checkbox>
-                    Alarm
-                </label>
-                <input type="submit" ng-submit="updateItem(item)" value="Update">
-                <div class="test">
-                    {{ item.details }}
-                    {{ item.deadline }}
-                </div>
-            </div>
+        <div ng-repeat="item in data.todoItems">
+            <div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a href="#" ng-click="item.isCollapsed = !item.isCollapsed">{{ item.name }}</a>
+					</h4>
+				</div>
+				<div class="panel-body" uib-collapse="item.isCollapsed">
+					<label class="control-label">Details</label>
+					<input type="text" ng-model="item.details">
+					<label class="control-label">Deadline</label>
+					<input type="date" ng-model="item.deadline">
+					<label>
+						<input type="checkbox" class="btn btn-primary" ng-model="item.alarm" btn-checkbox>
+						Alarm
+					</label>
+					<input type="submit" ng-submit="updateItem(item)" value="Update">
+					<div class="test">
+						{{ item.details }}
+						{{ item.deadline }}
+					</div>
+				</div>
+			</div>
         </div>
         <div class="col-sm-12">
             <form ng-submit="addItem(item)">
@@ -55,7 +61,5 @@
             </form>
         </div>
     </div>
-    <script src="js/listassist.js"></script>
-    <script src="js/controllers/todoctrl.js"></script>
 </body>
 </html>
