@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="js/base/ui-bootstrap-tpls-1.3.2.min.js"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         </div>
         <div class="row">
             <div class="col-sm-8 select-all-wrapper">
-                <input type="checkbox" class="select-all" />
+                <input type="checkbox" class="select-all">
             </div>
             <div class="col-sm-4 order-by-wrap">
                 <span class="order-by">Order By: </span>
@@ -27,13 +28,31 @@
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12"></div>
-            <div class="col-sm-12">
-                <form ng-submit="">
-                    <input type="text" ng-model="item.name" />
-                </form>
+        <div ng-repeat="item in data.todoItems" class="col-sm-12">
+            <div class="row">
+                <a href="#" ng-click="item.isCollapsed = !item.isCollapsed">{{ item.name }}</a>
             </div>
+            <div collapse="item.isCollapsed" ng-show="!item.isCollapsed">
+                <label class="control-label">Details</label>
+                <input type="text" ng-model="item.details">
+                <label class="control-label">Deadline</label>
+                <input type="date" ng-model="item.deadline">
+                <label>
+                    <input type="checkbox" class="btn btn primary" ng-model="item.alarm" btn-checkbox>
+                    Alarm
+                </label>
+                <input type="submit" ng-submit="updateItem(item)" value="Update">
+                <div class="test">
+                    {{ item.details }}
+                    {{ item.deadline }}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <form ng-submit="addItem(item)">
+                <input type="text" ng-model="item.name">
+                <input type="submit" value="Add">
+            </form>
         </div>
     </div>
     <script src="js/listassist.js"></script>

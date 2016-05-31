@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     
-    angular.module('todoCtrl', [])
+    angular.module('todoCtrl', ['ui.bootstrap'])
     
     .controller('todoCtrl', function($scope){
         $scope.data = {
@@ -12,10 +12,15 @@
         $scope.addItem = function(item){
             $scope.data.todoItems.push({
                 name: item.name,
-                details: item.details,
-                deadline: item.deadline,
-                alarm: item.alarm
+                isCollapsed: true,
+                details: '',
+                deadline: '',
+                alarm: 'off'
             });
+        };
+        
+        $scope.updateItem = function(item){
+            
         };
     });
     
