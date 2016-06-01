@@ -6,6 +6,10 @@ ol.todo-list {
   list-style: none;
 }
 
+a {
+  transition: all 300ms ease-in-out;
+}
+
 a.completed {
   text-decoration: line-through;
   opacity: .4;
