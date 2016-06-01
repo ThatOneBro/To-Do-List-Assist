@@ -7,19 +7,23 @@
         
 		$scope.data = {
             orderBy: 'entry',
-            todoItems: []
+            todoItems: [],
+			counter: 0
         };
         
         $scope.addItem = function(item){
             $scope.data.todoItems.push({
                 name: item.name,
-                isCollapsed: true,
                 details: '',
                 deadline: '',
-                alarm: 'off',
+                alarm: false,
                 completed: false,
-                alert: []
+				isCollapsed: true,
+				origIndex: $scope.data.counter,
+				updateAlert: []
             });
+			
+			$scope.data.counter++;
         };
         
         $scope.updateItem = function(item, newDetails, newDeadline, newAlarm){
@@ -30,15 +34,25 @@
         };
 		
 		$scope.addAlert = function(item, alertType, alertMsg){
-            if(item.alert){
-                item.alert = [];
+            if(item.updateAlert){
+                item.updateAlert = [];
             }
-			item.alert.push({type: alertType, msg: alertMsg});
+			item.updateAlert.push({type: alertType, msg: alertMsg});
 		};
 		
 		$scope.closeAlert = function(item, index){
-			item.alert.splice(index, 1);
+			item.updateAlert.splice(index, 1);
 		};
+		
+		$scope.orderChange = function(){
+			if($scope.data.orderBy == 'entry'){
+				
+			}
+			
+			else if($scope.data.orderBy == 'deadline'){
+				
+			}
+		}
     });
     
 })();

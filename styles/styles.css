@@ -2,4 +2,13 @@
 .app-wrap {
   max-width: 1000px; }
 
+ol.todo-list {
+  list-style: none;
+}
+
+a.completed {
+  text-decoration: line-through;
+  opacity: .4;
+}
+
 /*# sourceMappingURL=styles.css.map */

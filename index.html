@@ -24,35 +24,36 @@
             </div>
             <div class="col-sm-4 order-by-wrap">
                 <span class="order-by">Order By: </span>
-                <select ng-model="data.orderBy">
+                <select ng-change="orderChange()" ng-model="data.orderBy">
                     <option value="entry">Entry</option>
                     <option value="deadline">Deadline</option>
                 </select>
             </div>
         </div>
-        <div ng-repeat="x in data.todoItems">
-            <div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }}</a>
-					</h4>
-				</div>
-				<div class="panel-body" uib-collapse="x.isCollapsed">
-					<form ng-submit="updateItem(x, newDetails, newDeadline, newAlarm)">
-						<label class="control-label">Details</label>
-						<input type="text" ng-model="newDetails">
-						<label class="control-label">Deadline</label>
-						<input type="date" ng-model="newDeadline">
-						<label>
-							<input type="checkbox" class="btn btn-primary" ng-model="newAlarm" btn-checkbox>
-							Alarm
-						</label>
-						<input type="submit" value="Update">
-					</form>
-					<uib-alert ng-repeat="alert in x.alert" type="{{alert.type}}" close="closeAlert(x, $index)">{{alert.msg}}</uib-alert>
-				</div>
-			</div>
-        </div>
+		<ol class="list-group todo-list">
+			<li class="panel panel-default" ng-repeat="x in data.todoItems">
+					<div class="panel-heading">
+						<input type="checkbox" class="check-complete" ng-model="x.completed">
+						<h4 class="panel-title">
+							<a ng-class="{completed: x.completed}" href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }}</a>
+						</h4>
+					</div>
+					<div class="panel-body" uib-collapse="x.isCollapsed">
+						<form ng-submit="updateItem(x, newDetails, newDeadline, newAlarm)">
+							<label class="control-label">Details</label>
+							<input type="text" ng-model="newDetails">
+							<label class="control-label">Deadline</label>
+							<input type="date" ng-model="newDeadline">
+							<label>
+								<input type="checkbox" class="btn btn-primary" ng-model="newAlarm" btn-checkbox>
+								Alarm
+							</label>
+							<input type="submit" value="Update">
+						</form>
+						<uib-alert ng-repeat="alert in x.updateAlert" type="{{alert.type}}" close="closeAlert(x, $index)">{{alert.msg}}</uib-alert>
+					</div>
+			</li>
+		</ol>
         <div class="col-sm-12">
             <form ng-submit="addItem(item)">
                 <input type="text" ng-model="item.name">
