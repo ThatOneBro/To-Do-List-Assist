@@ -49,7 +49,7 @@
 						</label>
 						<input type="submit" value="Update">
 					</form>
-					<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+					<uib-alert ng-repeat="alert in x.alert" type="{{alert.type}}" close="closeAlert(x, $index)">{{alert.msg}}</uib-alert>
 				</div>
 			</div>
         </div>
