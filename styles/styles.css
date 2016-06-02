@@ -9,7 +9,7 @@
       transition: all 200ms ease-in-out; }
     /* line 10, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
     .app-wrap .todo-list .todo-item {
-      transition: all 300 ms ease-in-out; }
+      transition: all 300ms ease-in-out; }
       /* line 13, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
       .app-wrap .todo-list .todo-item.completed {
         text-decoration: line-through;
