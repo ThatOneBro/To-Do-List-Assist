@@ -1,3 +1,107 @@
+/**
+ * @license angular-bootstrap-datetimepicker  version: 0.4.0
+ * Copyright 2016 Knight Rider Consulting, Inc. http://www.knightrider.com
+ * License: MIT
+ */
+/* line 1, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+.datetimepicker {
+  border-radius: 4px;
+  direction: ltr;
+  display: block;
+  margin-top: 1px;
+  user-select: none;
+  width: 320px; }
+  /* line 9, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker > div {
+    display: none; }
+  /* line 14, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .hour,
+  .datetimepicker .minute {
+    height: 34px;
+    line-height: 34px;
+    margin: 0;
+    width: 25%; }
+  /* line 21, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .table {
+    margin: 0; }
+  /* line 26, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .table td,
+  .datetimepicker .table th {
+    border: 0;
+    border-radius: 4px;
+    height: 20px;
+    text-align: center; }
+  /* line 38, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .minute:hover,
+  .datetimepicker .hour:hover,
+  .datetimepicker .day:hover,
+  .datetimepicker .switch:hover,
+  .datetimepicker .left:hover,
+  .datetimepicker .right:hover {
+    background: #eee;
+    cursor: pointer; }
+  /* line 44, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .disabled,
+  .datetimepicker .disabled:hover {
+    background: none;
+    color: #ebebeb;
+    cursor: default; }
+  /* line 53, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .active,
+  .datetimepicker .active:hover,
+  .datetimepicker .active.disabled,
+  .datetimepicker .active.disabled:hover {
+    background-color: #04c;
+    background-image: linear-gradient(to bottom, #08c, #04c);
+    background-repeat: repeat-x;
+    border-color: #04c #04c #002a80;
+    color: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08c', endColorstr='#04c', GradientType=0);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); }
+  /* line 87, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .active:hover,
+  .datetimepicker .active:hover:hover,
+  .datetimepicker .active.disabled:hover,
+  .datetimepicker .active.disabled:hover:hover,
+  .datetimepicker .active:active,
+  .datetimepicker .active:hover:active,
+  .datetimepicker .active.disabled:active,
+  .datetimepicker .active.disabled:hover:active,
+  .datetimepicker .active.active,
+  .datetimepicker .active:hover.active,
+  .datetimepicker .active.disabled.active,
+  .datetimepicker .active.disabled:hover.active,
+  .datetimepicker .active.disabled,
+  .datetimepicker .active:hover.disabled,
+  .datetimepicker .active.disabled.disabled,
+  .datetimepicker .active.disabled:hover.disabled,
+  .datetimepicker td.active[disabled],
+  .datetimepicker td.active:hover[disabled],
+  .datetimepicker td.active.disabled[disabled],
+  .datetimepicker td.active.disabled:hover[disabled],
+  .datetimepicker span.active[disabled],
+  .datetimepicker span.active:hover[disabled],
+  .datetimepicker span.active.disabled[disabled],
+  .datetimepicker span.active.disabled:hover[disabled] {
+    background-color: #04c; }
+  /* line 91, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker span {
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 54px;
+    line-height: 54px;
+    margin: 1%;
+    width: 23%; }
+    /* line 101, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+    .datetimepicker span:hover {
+      background: #eee; }
+  /* line 107, D:/Dev/To-Do-Builder/styles/sass/0-tools/datetimepicker/_core.scss */
+  .datetimepicker .past,
+  .datetimepicker .future {
+    color: #999; }
+
 /* line 1, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
 .app-wrap {
   max-width: 1000px; }

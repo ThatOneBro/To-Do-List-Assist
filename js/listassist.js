@@ -2,6 +2,6 @@
 (function() {
 	'use strict';
     
-	angular.module('listAssist', ['todoCtrl']);
+	angular.module('listAssist', ['todoCtrl', 'ui.bootstrap', 'ngAnimate']);
     
 })();

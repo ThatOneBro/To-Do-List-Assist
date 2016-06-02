@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     
-    angular.module('todoCtrl', ['ui.bootstrap'])
+    angular.module('todoCtrl', [])
     
     .controller('todoCtrl', function($scope){
         
