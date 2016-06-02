@@ -19,12 +19,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-8 select-all-wrapper">
-                <input type="checkbox" class="select-all">
+            <div class="col-sm-10 select-all-wrapper">
+                <label class="sr-only" for="select-all">Select All</label>
+                <input type="checkbox" id="select-all" class="select-all">
             </div>
-            <div class="col-sm-4 order-by-wrap">
-                <span class="order-by">Order By: </span>
-                <select ng-change="orderChange()" ng-model="data.orderBy">
+            <div class="col-sm-2 order-by-wrap">
+                <label for="order-by">Order By: </label>
+                <select id="order-by" class="form-control" ng-change="orderChange()" ng-model="data.orderBy">
                     <option value="entry">Entry</option>
                     <option value="deadline">Deadline</option>
                 </select>
@@ -37,7 +38,7 @@
                         <label>   
                             <input type="checkbox" class="check-complete" ng-model="x.completed">
                             <h4 class="panel-title">
-                                <a class="todo-item" ng-class="{completed: x.completed}" href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }}</a>
+                                <a class="todo-item" ng-class="{completed: x.completed}" href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }} : {{x.details}} | {{x.deadline | date}}</a>
                             </h4>
                         </label>
                     </div>

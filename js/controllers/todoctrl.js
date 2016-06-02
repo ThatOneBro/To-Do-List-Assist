@@ -14,8 +14,8 @@
         $scope.addItem = function(item){
             $scope.data.todoItems.push({
                 name: item.name,
-                details: '',
-                deadline: '',
+                details: 'No details given.',
+                deadline: 'No deadline given.',
                 alarm: false,
                 completed: false,
 				isCollapsed: true,
