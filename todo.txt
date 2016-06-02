@@ -1,0 +1,20 @@
+Create sort function
+
+Create mark all as completed function
+
+Create alarm function
+
+Fix date display
+
+Set date restrictions
+
+=================================================
+
+Create views based on status
+Create close button for each item
+Add down arrow link to expand item instead of clicking link
+Create local storage
+Remove add button and create function to add on enter press
+Create system to modify name of todo item
+
+"Cannot read property name of undefined"
