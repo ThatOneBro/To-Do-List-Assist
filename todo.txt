@@ -17,4 +17,4 @@ Create local storage
 Remove add button and create function to add on enter press
 Create system to modify name of todo item
 
-"Cannot read property name of undefined"
+Fix "Cannot read property name of undefined"; remove sending blank input
