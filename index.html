@@ -5,10 +5,14 @@
     <title>List Assist</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
     <script src="js/base/ui-bootstrap-tpls-1.3.3.min.js"></script>
-    <script src="js/base/datetimepicker.js"></script>
+	<script src="js/base/moment.min.js"></script>
+    <script src="js/base/datetimepicker.min.js"></script>
+	<script src="js/base/datetimepicker.templates.js"></script>
 	<script src="js/listassist.js"></script>
     <script src="js/controllers/todoctrl.js"></script>
 </head>
@@ -22,7 +26,7 @@
         </div>
         <div class="row">
             <div class="col-sm-9 select-all-wrapper">
-                <label class="sr-only" for="select-all">Select All</label>
+                <label class="sr-only" for="select-all">Mark All As Completed</label>
                 <input type="checkbox" id="select-all" class="select-all">
             </div>
             <div class="col-sm-3 order-by-wrap">
@@ -55,7 +59,7 @@
                         <label>
 							Deadline
 							<div class="dropdown">
-								<a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+								<a class="dropdown-toggle" id="dropdown" role="button" data-toggle="dropdown" data-target="#" href="#">
 									<div class="input-group">
 										<input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
 										<span class="input-group-addon">
