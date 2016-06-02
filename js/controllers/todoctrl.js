@@ -14,8 +14,8 @@
         $scope.addItem = function(item){
             $scope.data.todoItems.push({
                 name: item.name,
-                details: 'No details given.',
-                deadline: 'No deadline given.',
+                details: 'No details given',
+                deadline: 'No deadline given',
                 alarm: false,
                 completed: false,
 				isCollapsed: true,
@@ -44,7 +44,13 @@
 			item.updateAlert.splice(index, 1);
 		};
 		
-		$scope.orderChange = function(){
+		$scope.closeAllItems = function(){			
+			for(var i = 0; i < $scope.data.todoItems.length; i++){
+				$scope.data.todoItems[i].isCollapsed = true;
+			}
+		};
+		
+		$scope.changeOrder = function(){
 			if($scope.data.orderBy == 'entry'){
 				
 			}

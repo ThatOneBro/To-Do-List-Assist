@@ -21,16 +21,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-10 select-all-wrapper">
+            <div class="col-sm-9 select-all-wrapper">
                 <label class="sr-only" for="select-all">Select All</label>
                 <input type="checkbox" id="select-all" class="select-all">
             </div>
-            <div class="col-sm-2 order-by-wrap">
-                <label for="order-by">Order By: </label>
-                <select id="order-by" class="form-control" ng-change="orderChange()" ng-model="data.orderBy">
-                    <option value="entry">Entry</option>
-                    <option value="deadline">Deadline</option>
-                </select>
+            <div class="col-sm-3 order-by-wrap">
+                <label for="order-by">Order By:
+					<div id="order-by" class="btn-group">
+						<label class="btn btn-primary" ng-model="data.orderBy" uib-btn-radio="'entry'">Entry</label>
+						<label class="btn btn-primary" ng-model="data.orderBy" uib-btn-radio="'deadline'">Deadline</label>
+					</div>
+				</label>
             </div>
         </div>
 		<ol class="list-group todo-list">
@@ -46,30 +47,34 @@
                     </div>
                 </div>
                 <div class="panel-body" uib-collapse="x.isCollapsed">
-                    <form class="form-inline" ng-submit="updateItem(x, newDetails, newDeadline, newAlarm)">
-                        <label class="control-label">Details</label>
-                        <input class="form-control" type="text" ng-model="newDetails">
-                        <label class="control-label">Deadline</label>
-                        <div class="dropdown">
-                          <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
-                            <div class="input-group">
-                                <input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
-                                <span class="input-group-addon">
-                                    <i class="glyphicon glyphicon-calendar"></i>
-                                </span>
-                            </div>
-                          </a>
-                          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
-                          </ul>
-                        </div>
+                    <form class="col-sm-3" ng-submit="updateItem(x, newDetails, newDeadline, newAlarm)">
+                        <label>
+							Details
+							<input class="form-control" type="text" ng-model="newDetails">
+						</label>
+                        <label>
+							Deadline
+							<div class="dropdown">
+								<a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+									<div class="input-group">
+										<input type="text" class="form-control" data-ng-model="data.dateDropDownInput">
+										<span class="input-group-addon">
+											<i class="glyphicon glyphicon-calendar"></i>
+										</span>
+									</div>
+								</a>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+									<datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
+								</ul>
+							</div>
+						</label>
                         <label>
                             <input type="checkbox" class="btn btn-primary" ng-model="newAlarm" btn-checkbox>
                             Alarm
                         </label>
-                        <input type="submit" class="btn btn-primary" value="Update">
-                    </form>
-                    <uib-alert ng-repeat="alert in x.updateAlert" type="{{alert.type}}" close="closeAlert(x, $index)">{{alert.msg}}</uib-alert>
+                        <input type="submit" class="btn btn-primary input-group" value="Update">
+						<uib-alert ng-repeat="alert in x.updateAlert" type="{{alert.type}}" close="closeAlert(x, $index)">{{alert.msg}}</uib-alert>
+					</form>
                 </div>
 			</li>
 			<li class="panel panel-default">
