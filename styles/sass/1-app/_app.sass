@@ -1,8 +1,15 @@
 .app-wrap
     max-width: 1000px
     
+    .top-row
+        margin-left: 20px
+        margin-bottom: 20px
+    
     .todo-list
         list-style: none
+        
+        .alert
+            margin-top: 15px
     
         .btn
             transition: all 200ms ease-in-out
@@ -13,3 +20,13 @@
             &.completed
                 text-decoration: line-through
                 opacity: .4
+                    
+        .close
+            display: none
+            color: #222
+            
+        li:hover .close
+            display: block
+            
+        .update
+            margin-top: 10px

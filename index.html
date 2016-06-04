@@ -24,10 +24,10 @@
                 <h1 class="text-center">List Assist</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-9 select-all-wrapper">
+        <div class="row top-row">
+            <div class="checkbox col-sm-9 select-all-wrapper">
                 <label class="sr-only" for="select-all">Mark All As Completed</label>
-                <input type="checkbox" id="select-all" class="select-all">
+                <input type="checkbox" id="select-all" class="select-all" ng-model="allMarked" ng-change="markAllItems(allMarked)">
             </div>
             <div class="col-sm-3 order-by-wrap">
                 <label for="order-by">Order By:
@@ -45,9 +45,12 @@
                         <label>   
                             <input type="checkbox" class="check-complete" ng-model="x.completed">
                             <h4 class="panel-title">
-                                <a class="todo-item" ng-class="{completed: x.completed}" href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }} : {{x.details}} | {{x.deadline | date}}</a>
+                                <a class="todo-item" ng-class="{completed: x.completed}" href="#" ng-click="x.isCollapsed = !x.isCollapsed">{{ x.name }} : {{x.details}} | {{x.deadline | date: 'EEE, MMMM d h:mm a'}}</a>
                             </h4>
                         </label>
+                        <button class="btn btn-default close" ng-click="removeItem(x, $index)">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
                     </div>
                 </div>
                 <div class="panel-body" uib-collapse="x.isCollapsed">
@@ -76,18 +79,22 @@
                             <input type="checkbox" class="btn btn-primary" ng-model="newAlarm" btn-checkbox>
                             Alarm
                         </label>
-                        <input type="submit" class="btn btn-primary input-group" value="Update">
+                        <input type="submit" class="btn btn-primary input-group update" value="Update">
 						<uib-alert ng-repeat="alert in x.updateAlert" type="{{alert.type}}" close="closeAlert(x, $index)">{{alert.msg}}</uib-alert>
 					</form>
                 </div>
 			</li>
 			<li class="panel panel-default">
-                <form class="form-inline panel-heading" ng-submit="addItem(item)">
+                <form class="form-inline panel-heading" name="add-item" ng-submit="addItem(item)">
                     <input class="form-control" type="text" ng-model="item.name">
                     <input type="submit" class="btn btn-primary" value="Add">
                 </form>
             </li>
 		</ol>
+        <uib-alert ng-repeat="alert in alarmAlerts" close="removeAlarm($index)">{{alert.msg}}</uib-alert>
+        <div class="sound-file">
+            <audio id="alarm-audio" src="audio/BOMB_SIREN-BOMB_SIREN-247265934.wav"></audio>
+        </div>
     </div>
 </body>
 </html>

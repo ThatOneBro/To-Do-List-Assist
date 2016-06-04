@@ -106,17 +106,34 @@
 .app-wrap {
   max-width: 1000px; }
   /* line 4, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+  .app-wrap .top-row {
+    margin-left: 20px;
+    margin-bottom: 20px; }
+  /* line 8, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
   .app-wrap .todo-list {
     list-style: none; }
-    /* line 7, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+    /* line 11, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+    .app-wrap .todo-list .alert {
+      margin-top: 15px; }
+    /* line 14, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
     .app-wrap .todo-list .btn {
       transition: all 200ms ease-in-out; }
-    /* line 10, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+    /* line 17, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
     .app-wrap .todo-list .todo-item {
       transition: all 300ms ease-in-out; }
-      /* line 13, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+      /* line 20, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
       .app-wrap .todo-list .todo-item.completed {
         text-decoration: line-through;
         opacity: .4; }
+    /* line 24, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+    .app-wrap .todo-list .close {
+      display: none;
+      color: #222; }
+    /* line 28, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+    .app-wrap .todo-list li:hover .close {
+      display: block; }
+    /* line 31, D:/Dev/To-Do-Builder/styles/sass/1-app/_app.sass */
+    .app-wrap .todo-list .update {
+      margin-top: 10px; }
 
 /*# sourceMappingURL=styles.css.map */
