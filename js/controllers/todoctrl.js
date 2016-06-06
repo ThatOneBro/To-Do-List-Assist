@@ -55,11 +55,11 @@
             if(item.updateAlert){
                 item.updateAlert = [];
             }
-		item.updateAlert.push({type: alertType, msg: alertMsg});
+	    item.updateAlert.push({type: alertType, msg: alertMsg});
 	};
 		
 	$scope.closeAlert = function(item, index){
-		item.updateAlert.splice(index, 1);
+	    item.updateAlert.splice(index, 1);
 	};
 		
 	$scope.closeAllItems = function(){			
@@ -109,9 +109,7 @@
 
         // update the time every second, also check if any of the any of the alarms have been passed. If so, set alert.
         $scope.getTime = function() {
-
             $scope.currentTime = { time : new Date() };
-
         };
 
         $interval(function(){
