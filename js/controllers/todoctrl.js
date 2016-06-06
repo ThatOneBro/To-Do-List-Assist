@@ -5,7 +5,7 @@
     
     .controller('todoCtrl', ['$scope', '$interval', function($scope, $interval){
         
-		$scope.data = {
+	$scope.data = {
             orderBy: 'entry',
             todoItems: [],
 			counter: 0
@@ -32,7 +32,7 @@
         };
         
         $scope.updateItem = function(item, newDetails, newDeadline, newAlarm){
-			if(newDetails){
+	    if(newDetails){
                 item.details = newDetails;
             }
             
@@ -48,25 +48,25 @@
                 item.alarm = false;
             }
             
-			$scope.addAlert(item, 'success', 'Update successful.');
+	    $scope.addAlert(item, 'success', 'Update successful.');
         };
 		
-		$scope.addAlert = function(item, alertType, alertMsg){
+	$scope.addAlert = function(item, alertType, alertMsg){
             if(item.updateAlert){
                 item.updateAlert = [];
             }
-			item.updateAlert.push({type: alertType, msg: alertMsg});
-		};
+		item.updateAlert.push({type: alertType, msg: alertMsg});
+	};
 		
-		$scope.closeAlert = function(item, index){
-			item.updateAlert.splice(index, 1);
-		};
+	$scope.closeAlert = function(item, index){
+		item.updateAlert.splice(index, 1);
+	};
 		
-		$scope.closeAllItems = function(){			
-			for(var i = 0; i < $scope.data.todoItems.length; i++){
-				$scope.data.todoItems[i].isCollapsed = true;
-			}
-		};
+	$scope.closeAllItems = function(){			
+		for(var i = 0; i < $scope.data.todoItems.length; i++){
+			$scope.data.todoItems[i].isCollapsed = true;
+		}
+	};
         
         $scope.removeItem = function(item, index){
             $scope.data.todoItems.splice(index, 1);
