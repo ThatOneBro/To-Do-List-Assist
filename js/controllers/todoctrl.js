@@ -5,10 +5,10 @@
     
     .controller('todoCtrl', ['$scope', '$interval', function($scope, $interval){
         
-	$scope.data = {
+        $scope.data = {
             orderBy: 'entry',
             todoItems: [],
-	    counter: 0
+            counter: 0
         };
         
         $scope.addItem = function(item){
@@ -32,8 +32,8 @@
         };
         
         $scope.updateItem = function(item, newDetails, newDeadline, newAlarm){
-	    if(newDetails){
-		item.details = newDetails;
+            if(newDetails){
+                item.details = newDetails;
             }
             
             if(newDeadline){
@@ -52,9 +52,9 @@
         };
 		
 	$scope.addAlert = function(item, alertType, alertMsg){
-            if(item.updateAlert){
-                item.updateAlert = [];
-            }
+        if(item.updateAlert){
+            item.updateAlert = [];
+        }
 	    item.updateAlert.push({type: alertType, msg: alertMsg});
 	};
 		
