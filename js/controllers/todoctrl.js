@@ -8,7 +8,7 @@
 	$scope.data = {
             orderBy: 'entry',
             todoItems: [],
-			counter: 0
+	    counter: 0
         };
         
         $scope.addItem = function(item){
@@ -32,8 +32,8 @@
         };
         
         $scope.updateItem = function(item, newDetails, newDeadline, newAlarm){
-			if(newDetails){
-				item.details = newDetails;
+	    if(newDetails){
+		item.details = newDetails;
             }
             
             if(newDeadline){
@@ -48,14 +48,14 @@
                 item.alarm = false;
             }
             
-			$scope.addAlert(item, 'success', 'Update successful.');
+            $scope.addAlert(item, 'success', 'Update successful.');
         };
 		
 	$scope.addAlert = function(item, alertType, alertMsg){
             if(item.updateAlert){
                 item.updateAlert = [];
             }
-			item.updateAlert.push({type: alertType, msg: alertMsg});
+	    item.updateAlert.push({type: alertType, msg: alertMsg});
 	};
 		
 	$scope.closeAlert = function(item, index){
